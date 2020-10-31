@@ -30,6 +30,7 @@ export default function CardsContainer(props) {
       gameEvent={gameEvents[gameEvents.length - 1 - i]}
       getVisibleCard={getVisibleCard}
       removeCard={removeCard}
+      setLevel={props.setLevel}
     />
   );
   

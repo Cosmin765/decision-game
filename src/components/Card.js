@@ -14,9 +14,7 @@ export default function Card(props) {
   const fadeDuration = 0.4;
   const rotation = map(posX, -window.innerWidth / 2, window.innerWidth / 2, -35, 35);
   
-  const handleTouchMove = e => {
-    setPosX(e.touches[0].pageX - window.innerWidth / 2);
-  };
+  const handleTouchMove = e => setPosX(e.touches[0].pageX - window.innerWidth / 2);
   
   const resetPos = () => setPosX(0);
   
@@ -24,10 +22,13 @@ export default function Card(props) {
     setFade(true);
     setPosX(dir * 1.5 * window.innerWidth);
     
-    /* if(dir === -1) console.log(props.gameEvent.left.decision);
-    else console.log(props.gameEvent.right.decision); */
+    const option = (dir === -1) ? props.gameEvent.left : props.gameEvent.right;
     
-    setTimeout(() => props.removeCard(), fadeDuration * 1000);
+    setTimeout(() => {
+      props.removeCard();
+      props.setLevel(Array.from(option.effect));
+
+    }, fadeDuration * 1000);
   };
   
   const handleTouchEnd = () => {

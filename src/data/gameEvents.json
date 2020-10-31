@@ -2,56 +2,67 @@
   {
     "q": "Salut",
     "left": {
-      "decision": "some stupid decision which is bad for everyone"
+      "decision": "some stupid decision which is bad for everyone",
+      "effect": [0, 0, 0, -4]
     },
     "right": {
-      "decision": "some smart decision"
-    }
-  },
-  {
-    "q": "Salut!",
-    "left": {
-      "decision": "some stupid decision"
-    },
-    "right": {
-      "decision": "some smart decision"
+      "decision": "some smart decision",
+      "effect": [0, 0, 0, 4]
     }
   },
   {
     "q": "Salut",
     "left": {
-      "decision": "some stupid decision"
+      "decision": "some stupid decision which is bad for everyone",
+      "effect": [0, 0, 0, -4]
     },
     "right": {
-      "decision": "some smart decision"
-    }
-  },
-  {
-    "q": "Salut!",
-    "left": {
-      "decision": "some stupid decision"
-    },
-    "right": {
-      "decision": "some smart decision"
+      "decision": "some smart decision",
+      "effect": [0, 0, 0, 4]
     }
   },
   {
     "q": "Salut",
     "left": {
-      "decision": "some stupid decision"
+      "decision": "some stupid decision which is bad for everyone",
+      "effect": [0, 0, 0, -4]
     },
     "right": {
-      "decision": "some smart decision"
+      "decision": "some smart decision",
+      "effect": [0, 0, 0, 4]
     }
   },
   {
-    "q": "Salut!",
+    "q": "Salut",
     "left": {
-      "decision": "some stupid decision"
+      "decision": "some stupid decision which is bad for everyone",
+      "effect": [0, 0, 0, -4]
     },
     "right": {
-      "decision": "some smart decision"
+      "decision": "some smart decision",
+      "effect": [0, 0, 0, 4]
+    }
+  },
+  {
+    "q": "Salut",
+    "left": {
+      "decision": "some stupid decision which is bad for everyone",
+      "effect": [0, 0, 0, -4]
+    },
+    "right": {
+      "decision": "some smart decision",
+      "effect": [0, 0, 0, 4]
+    }
+  },
+  {
+    "q": "Salut",
+    "left": {
+      "decision": "some stupid decision which is bad for everyone",
+      "effect": [0, 0, 0, -4]
+    },
+    "right": {
+      "decision": "some smart decision",
+      "effect": [0, 0, 0, 4]
     }
   }
-  
 ]

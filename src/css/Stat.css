@@ -1,17 +1,29 @@
 .stat {
   background: rgb(150, 150, 150);
   border-radius: 50%;
-  
+  position: relative;
+
   --circle-diameter: 12vw;
   width: var(--circle-diameter);
   height: var(--circle-diameter);
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .stat img {
+  position: absolute;
   width: 90%;
   height: 90%;
+}
+
+.stat .fill-level {
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  height: 0%;
+  bottom: 0;
+  transition: all 1s linear;
 }
