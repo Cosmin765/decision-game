@@ -1,0 +1,17 @@
+.stat {
+  background: rgb(150, 150, 150);
+  border-radius: 50%;
+  
+  --circle-diameter: 12vw;
+  width: var(--circle-diameter);
+  height: var(--circle-diameter);
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stat img {
+  width: 90%;
+  height: 90%;
+}

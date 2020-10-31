@@ -1,0 +1,57 @@
+[
+  {
+    "q": "Salut",
+    "left": {
+      "decision": "some stupid decision which is bad for everyone"
+    },
+    "right": {
+      "decision": "some smart decision"
+    }
+  },
+  {
+    "q": "Salut!",
+    "left": {
+      "decision": "some stupid decision"
+    },
+    "right": {
+      "decision": "some smart decision"
+    }
+  },
+  {
+    "q": "Salut",
+    "left": {
+      "decision": "some stupid decision"
+    },
+    "right": {
+      "decision": "some smart decision"
+    }
+  },
+  {
+    "q": "Salut!",
+    "left": {
+      "decision": "some stupid decision"
+    },
+    "right": {
+      "decision": "some smart decision"
+    }
+  },
+  {
+    "q": "Salut",
+    "left": {
+      "decision": "some stupid decision"
+    },
+    "right": {
+      "decision": "some smart decision"
+    }
+  },
+  {
+    "q": "Salut!",
+    "left": {
+      "decision": "some stupid decision"
+    },
+    "right": {
+      "decision": "some smart decision"
+    }
+  }
+  
+]

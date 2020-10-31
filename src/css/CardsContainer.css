@@ -1,0 +1,15 @@
+.cards-container {
+  background: rgb(0, 15, 153);
+  flex: 5;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards-container .cards-holder {
+  height: 80%;
+  width: 70%;
+  
+  position: relative;
+}

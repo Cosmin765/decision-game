@@ -1,0 +1,8 @@
+.game-stats {
+  background: rgb(50, 50, 50);
+  flex: 1;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
