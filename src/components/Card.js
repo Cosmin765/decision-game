@@ -26,7 +26,7 @@ export default function Card(props) {
     
     setTimeout(() => {
       props.removeCard();
-      props.setLevel(Array.from(option.effect));
+      props.sendLevel(Array.from(option.effect));
 
     }, fadeDuration * 1000);
   };
@@ -46,6 +46,7 @@ export default function Card(props) {
         transform: `translateX(${posX - props.offset}px) rotateZ(${rotation}deg)`,
         transitionDuration: fade ? `${fadeDuration}s` : '0.07s'
       }}
+      onTouchStart={visible ? handleTouchMove : nothing}
       onTouchMove={visible ? handleTouchMove : nothing}
       onTouchEnd={visible ? handleTouchEnd : nothing}
     >

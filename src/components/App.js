@@ -13,26 +13,21 @@ export default function App() {
   const [state, setState] = useState({
     statsLevel: Array(statsCount).fill(statsMaxLevel / 2),
     statsLastLevel: Array(statsCount).fill(0),
-    statsChanged: Array(statsCount).fill(true)
   });
 
-	const setLevel = effect => {
-		const newStatusLevel = state.statsLevel.map((level, index) => {
-      state.statsChanged[index] = (effect[index] !== 0);
-      return level + effect[index];
-    });
+	const sendLevel = effect => {
+		const newStatusLevel = state.statsLevel.map((level, index) => level + effect[index]);
 
     setState({
       statsLevel: Array.from(newStatusLevel),
       statsLastLevel: Array.from(state.statsLevel),
-      statsChanged: Array.from(state.statsChanged)
     });
 	};
 
   return (
     <div className="app">
       <GameStats statsInfo={state} statsMaxLevel={statsMaxLevel}/>
-      <CardsContainer setLevel={setLevel}/>
+      <CardsContainer sendLevel={sendLevel}/>
       <Timer />
     </div>
   );
