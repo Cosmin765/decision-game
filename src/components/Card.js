@@ -16,8 +16,6 @@ export default function Card(props) {
   
   const handleTouchMove = e => setPosX(e.touches[0].pageX - window.innerWidth / 2);
   
-  const resetPos = () => setPosX(0);
-  
   const fadeTo = dir => {
     setFade(true);
     setPosX(dir * 1.5 * window.innerWidth);
@@ -27,14 +25,12 @@ export default function Card(props) {
     setTimeout(() => {
       props.removeCard();
       props.sendLevel(Array.from(option.effect));
-
     }, fadeDuration * 1000);
   };
   
   const handleTouchEnd = () => {
-    if(Math.abs(posX) > window.innerWidth / 4)
-      fadeTo(posX < 0 ? -1 : 1);
-    else resetPos();
+    if(Math.abs(posX) > window.innerWidth / 4) fadeTo(posX < 0 ? -1 : 1);
+    else setPosX(0);
   };
   
   return (
@@ -57,7 +53,7 @@ export default function Card(props) {
           opacity: `${map(posX, 0, window.innerWidth / 8, 0, 100)}%`
         }}
       > { props.gameEvent.right.decision } </div>
-      
+
       <div 
         className="right option"
         style={{
