@@ -56,23 +56,16 @@ export default function Card(props) {
         style={{
           opacity: `${map(posX, 0, window.innerWidth / 8, 0, 100)}%`
         }}
-      >
-        { props.gameEvent.right.decision }
-      </div>
+      > { props.gameEvent.right.decision } </div>
+      
       <div 
         className="right option"
         style={{
           opacity: `${map(posX, 0, -window.innerWidth / 8, 0, 100)}%`
         }}
-      >
-        { props.gameEvent.left.decision }
-      </div>
+      > { props.gameEvent.left.decision } </div>
       
-      { visible ? 
-        props.gameEvent.q 
-        :
-        <img src={backImage} alt="" className="back-image"/>
-      }
+      { visible ? props.gameEvent.q : <img src={backImage} alt="" className="back-image"/> }
     </div>
   );
 }

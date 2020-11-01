@@ -5,25 +5,18 @@ import uniqid from 'uniqid';
 import { useState } from 'react';
 
 export default function CardsContainer(props) {
-  const [gameEvents, setGameEvents] = useState(Array.from(gameEventsTemp));
-  
+  const [gameEvents, setGameEvents] = useState(Array.from(gameEventsTemp)); // to copy the gameEvents as it's read only
   const cardsCount = gameEvents.length;
   
-  const getVisibleCard = () => {
-     const el = cards.reduce((acc, el) => {
-       if(acc.props.offset < el.props.offset) return el;
-       return acc;
-     }, cards[0]);
-     
-     return el;
-  };
+  const getVisibleCard = () => cards.reduce((acc, el) => acc.props.offset < el.props.offset ? el : acc, cards[0]);
   
   const removeCard = () => {
     gameEvents.splice(0, 1);
     setGameEvents(Array.from(gameEvents));
   }
   
-  const cards = Array.from(Array(cardsCount).keys()).map(i => <Card 
+  const cards = Array.from(Array(cardsCount).keys()).map(i => 
+    <Card 
       offset={i * 3} 
       key={uniqid()}
       id={uniqid()}
