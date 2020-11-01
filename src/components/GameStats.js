@@ -18,7 +18,6 @@ export default function GameStats(props) {
 			info={{
 				currLevel: props.statsInfo.statsLevel[count],
 				lastLevel: props.statsInfo.statsLastLevel[count],
-				changed: props.statsInfo.statsChanged[count],
 			}}
       title={statsTitle[count++]}
 			maxLevel={props.statsMaxLevel}

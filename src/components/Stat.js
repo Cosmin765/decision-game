@@ -15,9 +15,7 @@ export default function Stat(props) {
     );
   }; // display the alert
 
-  if(props.info.changed && level === props.info.lastLevel) {
-    setTimeout(() => setLevel(props.info.currLevel), 0); // so that stats fill linearly
-  };
+  if(level === props.info.lastLevel) setTimeout(() => setLevel(props.info.currLevel), 0); // so that stats fill linearly
   
   return (
     <div className="stat" onClick={handleClick}>

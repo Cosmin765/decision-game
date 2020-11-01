@@ -25,5 +25,9 @@
   width: 100%;
   height: 0%;
   bottom: 0;
+<<<<<<< HEAD
   transition: all .3s linear;
+=======
+  transition: all 0.7s linear;
+>>>>>>> 5f4d983c3ac9d3a1ee4040211b698e8dd6302f76
 }

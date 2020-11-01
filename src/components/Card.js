@@ -16,8 +16,6 @@ export default function Card(props) {
   
   const handleTouchMove = e => setPosX(e.touches[0].pageX - window.innerWidth / 2);
   
-  const resetPos = () => setPosX(0);
-  
   const fadeTo = dir => {
     setFade(true);
     setPosX(dir * 1.5 * window.innerWidth);
@@ -26,15 +24,13 @@ export default function Card(props) {
     
     setTimeout(() => {
       props.removeCard();
-      props.setLevel(Array.from(option.effect));
-
+      props.sendLevel(Array.from(option.effect));
     }, fadeDuration * 1000);
   };
   
   const handleTouchEnd = () => {
-    if(Math.abs(posX) > window.innerWidth / 4)
-      fadeTo(posX < 0 ? -1 : 1);
-    else resetPos();
+    if(Math.abs(posX) > window.innerWidth / 4) fadeTo(posX < 0 ? -1 : 1);
+    else setPosX(0);
   };
   
   return (
@@ -46,6 +42,7 @@ export default function Card(props) {
         transform: `translateX(${posX - props.offset}px) rotateZ(${rotation}deg)`,
         transitionDuration: fade ? `${fadeDuration}s` : '0.07s'
       }}
+      onTouchStart={visible ? handleTouchMove : nothing}
       onTouchMove={visible ? handleTouchMove : nothing}
       onTouchEnd={visible ? handleTouchEnd : nothing}
     >
@@ -55,23 +52,16 @@ export default function Card(props) {
         style={{
           opacity: `${map(posX, 0, window.innerWidth / 8, 0, 100)}%`
         }}
-      >
-        { props.gameEvent.right.decision }
-      </div>
+      > { props.gameEvent.right.decision } </div>
+
       <div 
         className="right option"
         style={{
           opacity: `${map(posX, 0, -window.innerWidth / 8, 0, 100)}%`
         }}
-      >
-        { props.gameEvent.left.decision }
-      </div>
+      > { props.gameEvent.left.decision } </div>
       
-      { visible ? 
-        props.gameEvent.q 
-        :
-        <img src={backImage} alt="" className="back-image"/>
-      }
+      { visible ? props.gameEvent.q : <img src={backImage} alt="" className="back-image"/> }
     </div>
   );
 }
