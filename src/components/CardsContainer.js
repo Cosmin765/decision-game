@@ -1,28 +1,20 @@
 import './../css/CardsContainer.css';
 import Card from './Card';
-import gameEventsTemp from './../data/gameEvents.json';
 import uniqid from 'uniqid';
-import { useState } from 'react';
 
 export default function CardsContainer(props) {
-  const [gameEvents, setGameEvents] = useState(Array.from(gameEventsTemp)); // to copy the gameEvents as it's read only
-  const cardsCount = gameEvents.length;
+  const cardsCount = props.gameEvents.length;
   
-  const getVisibleCard = () => cards.reduce((acc, el) => acc.props.offset < el.props.offset ? el : acc, cards[0]);
-  
-  const removeCard = () => {
-    gameEvents.splice(0, 1);
-    setGameEvents(Array.from(gameEvents));
-  }
+  const getVisibleCard = () => cards.reduce((prev, curr) => prev.props.offset < curr.props.offset ? curr : prev, cards[0]);
   
   const cards = Array.from(Array(cardsCount).keys()).map(i => 
     <Card 
       offset={i * 3} 
       key={uniqid()}
       id={uniqid()}
-      gameEvent={gameEvents[gameEvents.length - 1 - i]}
+      gameEvent={props.gameEvents[props.gameEvents.length - 1 - i]}
       getVisibleCard={getVisibleCard}
-      removeCard={removeCard}
+      removeCard={props.removeCard}
       sendLevel={props.sendLevel}
     />
   );
